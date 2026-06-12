@@ -15,3 +15,29 @@ La idea es crear una página o app para que sea más fácil recuperar las cosas 
 * `/assets`: Imágenes.
 * `/data`: Datos de prueba.
 * `README.md`: Este archivo.
+
+## Stack tecnológico
+* **Frontend:** Next.js 15 con TypeScript
+* **Styling:** Tailwind CSS
+* **Linting:** ESLint
+
+## Instalación
+
+```bash
+npm install
+```
+
+## Desarrollo
+
+```bash
+npm run dev
+```
+
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver la aplicación.
+
+## Build
+
+```bash
+npm run build
+npm start
+```
