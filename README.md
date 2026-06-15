@@ -1,4 +1,4 @@
-# Proyecto: Objetos Perdidos (Campus)
+# Proyecto: Objetos Perdidos
 
 ## Resumen
 La propuesta consiste en desarrollar una página que permita registrar, consultar y gestionar reportes de objetos perdidos y encontrados de manera rápida y accesible. Mediante la publicación de fotografías, descripciones y ubicaciones aproximadas, los usuarios podrán identificar coincidencias entre artículos reportados como perdidos y aquellos encontrados por otros miembros de la comunidad.
