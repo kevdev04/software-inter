@@ -1,7 +1,7 @@
 # Proyecto: Objetos Perdidos (Campus)
 
 ## Resumen
-La idea es crear una página para que sea más fácil recuperar las cosas que perdemos en la escuela. Ahorita, cuando alguien pierde algo, no sabe a dónde ir y termina preguntando en todos lados o dándose por vencido. Queremos que esto sea más sencillo para que la gente recupere sus cosas rápido y sin tanto problema.
+La propuesta consiste en desarrollar una página que permita registrar, consultar y gestionar reportes de objetos perdidos y encontrados de manera rápida y accesible. Mediante la publicación de fotografías, descripciones y ubicaciones aproximadas, los usuarios podrán identificar coincidencias entre artículos reportados como perdidos y aquellos encontrados por otros miembros de la comunidad.
 
 ## ¿Cuál es el problema?
 
