@@ -5,11 +5,11 @@ La propuesta consiste en desarrollar una página que permita registrar, consulta
 
 ## Problemática
 
-Cuando pierdes algo, tienes que ir a preguntar a vigilancia, a las oficinas o a la cafetería, y casi siempre nadie sabe nada. Es un desorden.
+Cuando pierdes algo, es difícil encontrar los objetos perdidos, debes buscar en todos lados, preguntar en grupos de WhatsApp, Facebook, preguntar con compañeros o secretaria académica, y muchas veces la comunicación no es eficiente, la mayoria de compañeros termina dando por peridos sus objetos extraviados.
 
 ## Impacto
 
-Muchos terminan perdiendo cosas importantes como llaves, documentos o hasta laptops, perdiendo tiempo preguntando a la gente en grupos, trabajadores y compañeros sin encontrar sus objetos extraviados con exito en corto tiempo.
+Muchos terminan perdiendo cosas importantes como llaves, documentos o hasta laptops, perdiendo tiempo preguntando a la gente en grupos, a trabajadores y compañeros sin encontrar sus objetos extraviados con exito en corto tiempo.
 
 ## Solución 
 
