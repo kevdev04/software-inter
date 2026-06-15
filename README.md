@@ -1,7 +1,7 @@
 # Proyecto: Objetos Perdidos (Campus)
 
 ## Resumen
-La idea es crear una página o app para que sea más fácil recuperar las cosas que perdemos en la escuela. Ahorita, cuando alguien pierde algo, no sabe a dónde ir y termina preguntando en todos lados o dándose por vencido. Queremos que esto sea más sencillo para que la gente recupere sus cosas rápido y sin tanto problema.
+La idea es crear una página para que sea más fácil recuperar las cosas que perdemos en la escuela. Ahorita, cuando alguien pierde algo, no sabe a dónde ir y termina preguntando en todos lados o dándose por vencido. Queremos que esto sea más sencillo para que la gente recupere sus cosas rápido y sin tanto problema.
 
 ## ¿Cuál es el problema?
 
