@@ -76,6 +76,16 @@ Consecuencia: Información incorrecta o pérdida de reportes.
 
 Mitigación: Implementar validaciones, realizar pruebas funcionales y respaldar la información
 
+### 4. Problemas de comunicación dentro del equipo
+
+Descripción: Falta de coordinación o seguimiento de tareas.
+
+Impacto: Medio.
+
+Consecuencia: Trabajo duplicado, retrasos o incumplimiento de objetivos.
+
+Mitigación: Mantener reuniones breves de seguimiento y actualizar constantemente el tablero Kanban.
+
 
 ## Estructura del proyecto
 * `/docs`: Archivos extra.
