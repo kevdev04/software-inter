@@ -46,6 +46,37 @@ El problema de perder cosas en la escuela necesita una solución rápida. Kanban
 ### 4. Todo es muy visual
 Con un tablero dividido en columnas (*Por hacer, En proceso, Hecho*), cualquiera puede entrar y ver en un segundo qué se está programando hoy, qué está pendiente y qué ya se terminó. Así no perdemos tiempo en juntas para ver cómo va el proyecto.
 
+## Riesgos del Proyecto
+
+### 1. Cambios en los requisitos
+Descripción: Durante el desarrollo pueden surgir nuevas ideas o funcionalidades que no estaban contempladas inicialmente.
+
+Impacto: Alto.
+
+Consecuencia: Retrasos en las entregas y aumento de la carga de trabajo.
+
+Mitigación: Definir claramente el alcance desde el inicio y priorizar únicamente las funcionalidades esenciales.
+
+### 2. Tiempo insuficiente de desarrollo
+Descripción: El periodo de 3 a 4 semanas es limitado para implementar todas las funcionalidades deseadas.
+
+Impacto: Alto.
+
+Consecuencia: Algunas características podrían quedar incompletas o requerir simplificaciones.
+
+Mitigación: Dividir el trabajo en tareas pequeñas y priorizar un Producto Mínimo Viable (MVP).
+
+### 3. Errores en la gestión de datos
+
+Descripción: Fallos al registrar, almacenar o recuperar información de los objetos reportados.
+
+Impacto: Alto.
+
+Consecuencia: Información incorrecta o pérdida de reportes.
+
+Mitigación: Implementar validaciones, realizar pruebas funcionales y respaldar la información
+
+
 ## Estructura del proyecto
 * `/docs`: Archivos extra.
 * `/src`: Aquí irá el código.
