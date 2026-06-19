@@ -28,8 +28,6 @@
 
 ## Matriz de Priorización (MoSCoW)
 
-Para asegurar el éxito y enfoque del proyecto durante el desarrollo, los requerimientos se han priorizado utilizando la metodología MoSCoW:
-
 ### 1. Debe tener (*Must Have*) – Esenciales para el MVP
 * **Buscador Inteligente:** Motor de búsqueda con filtros por zona del campus, categoría y orden cronológico.
 * **Registrar Objeto Perdido:** Formulario de reporte rápido para alumnos con carga de imágenes y contacto seguro.
