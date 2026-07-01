@@ -4,7 +4,6 @@
   background-color: #f4f4f5;
 }
 
-/* SIDEBAR */
 .sidebar {
   width: 240px;
   min-height: 100vh;
@@ -83,14 +82,12 @@
   border-color: rgba(220, 38, 38, 0.3);
 }
 
-/* MAIN */
 .main-content {
   margin-left: 240px;
   padding: 0 2rem 2rem;
   flex: 1;
 }
 
-/* TOPBAR */
 .topbar {
   display: flex;
   justify-content: space-between;
@@ -131,7 +128,6 @@
   justify-content: center;
 }
 
-/* PAGE HEADER */
 .page-header {
   margin-bottom: 1.75rem;
 }
@@ -148,39 +144,57 @@
   color: #6b7280;
 }
 
-/* STATS */
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.stat-card {
-  background-color: #ffffff;
-  border-radius: 12px;
-  padding: 1.25rem 1.5rem;
+/* TOOLBAR */
+.historial-toolbar {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
 }
 
-.stat-icon {
-  font-size: 2rem;
+.filtros {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
-.stat-value {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: #1a1a2e;
-  line-height: 1;
-  margin-bottom: 0.25rem;
-}
-
-.stat-label {
-  font-size: 0.8rem;
+.filtro-btn {
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background-color: #ffffff;
   color: #6b7280;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filtro-btn:hover {
+  border-color: #4f46e5;
+  color: #4f46e5;
+}
+
+.filtro-btn.activo {
+  background-color: #4f46e5;
+  color: #ffffff;
+  border-color: #4f46e5;
+}
+
+.buscador {
+  padding: 0.5rem 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  color: #374151;
+  outline: none;
+  width: 280px;
+  transition: border-color 0.2s;
+}
+
+.buscador:focus {
+  border-color: #4f46e5;
 }
 
 /* SECTION */
@@ -204,74 +218,58 @@
   color: #1a1a2e;
 }
 
-.ver-todos {
+.total-registros {
   font-size: 0.85rem;
-  color: #4f46e5;
-  text-decoration: none;
-  font-weight: 500;
+  color: #6b7280;
 }
 
-.ver-todos:hover {
-  text-decoration: underline;
+.table-wrapper {
+  overflow-x: auto;
 }
 
-/* CARDS GRID */
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.25rem;
-}
-
-.object-card {
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  overflow: hidden;
-  transition: box-shadow 0.2s;
-}
-
-.object-card:hover {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-}
-
-.object-img {
+.historial-table {
   width: 100%;
-  height: 140px;
-  background-color: #f3f4f6;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
-  color: #9ca3af;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.historial-table th {
+  text-align: left;
+  padding: 0.65rem 1rem;
+  background-color: #f9fafb;
+  color: #6b7280;
+  font-weight: 600;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   border-bottom: 1px solid #e5e7eb;
 }
 
-.object-info {
-  padding: 1rem;
+.historial-table td {
+  padding: 0.75rem 1rem;
+  color: #374151;
+  border-bottom: 1px solid #f3f4f6;
+  vertical-align: middle;
 }
 
-.object-nombre {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #4f46e5;
-  margin-bottom: 0.4rem;
+.historial-table tr:last-child td {
+  border-bottom: none;
 }
 
-.object-descripcion {
-  font-size: 0.82rem;
+.historial-table tr:hover td {
+  background-color: #f9fafb;
+}
+
+.email-cell {
+  font-size: 0.8rem;
   color: #6b7280;
-  line-height: 1.5;
-  margin-bottom: 0.75rem;
 }
 
-.object-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.object-fecha {
-  font-size: 0.78rem;
+.empty-msg {
   color: #9ca3af;
+  font-size: 0.9rem;
+  padding: 1rem 0;
+  text-align: center;
 }
 
 /* BADGES */
@@ -281,11 +279,7 @@
   border-radius: 999px;
   font-size: 0.75rem;
   font-weight: 600;
-}
-
-.badge-pendiente {
-  background-color: #fef3c7;
-  color: #92400e;
+  white-space: nowrap;
 }
 
 .badge-validado {
@@ -293,22 +287,17 @@
   color: #065f46;
 }
 
+.badge-rechazado {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
 .badge-reclamado {
   background-color: #e0e7ff;
   color: #3730a3;
 }
-.badge-rechazado {
-  background-color: #fee2e2;
-  color: #991b1b;
-}
 
-.object-img-real {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.badge-rechazado {
-  background-color: #fee2e2;
-  color: #991b1b;
+.badge-penalizacion {
+  background-color: #fef3c7;
+  color: #92400e;
 }

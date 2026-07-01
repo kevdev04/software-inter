@@ -1,39 +1,39 @@
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import {
+  obtenerEstadisticasService,
+  obtenerRecientesService,
+} from "../../services/dashboard.service";
+import { imagenUrl } from "../../services/reportes.service";
 import "./DashboardPage.css";
-
-const statsData = [
-  { label: "Objetos reportados", value: 24},
-  { label: "Reclamaciones pendientes", value: 8},
-  { label: "Usuarios registrados", value: 132},
-];
-
-const recentObjects = [
-  {
-    id: 1,
-    nombre: "Mochila Negra",
-    descripcion: "Marca Tech, dejada en el laboratorio 3. Contiene libretas.",
-    fecha: "17 Jun 2026",
-    estado: "Pendiente",
-  },
-  {
-    id: 2,
-    nombre: "Audífonos Sony WH-1000XM4",
-    descripcion: "Color gris oscuro, encontrados en las bancas de la explanada.",
-    fecha: "16 Jun 2026",
-    estado: "Validado",
-  },
-  {
-    id: 3,
-    nombre: "Termo Stanley Azul",
-    descripcion: "Olvidado en el área de la biblioteca del piso superior.",
-    fecha: "15 Jun 2026",
-    estado: "Reclamado",
-  },
-];
 
 export default function DashboardPage() {
   const navigate = useNavigate();
   const usuario = JSON.parse(localStorage.getItem("usuario") || '{"nombre": "Administrador"}');
+
+  const [stats, setStats] = useState({
+    objetosReportados: 0,
+    reclamacionesPendientes: 0,
+    usuariosRegistrados: 0,
+  });
+  const [recentObjects, setRecentObjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    Promise.all([obtenerEstadisticasService(), obtenerRecientesService()])
+      .then(([statsData, recientesData]) => {
+        setStats(statsData);
+        setRecentObjects(recientesData);
+      })
+      .catch((err) => console.error(err))
+      .finally(() => setLoading(false));
+  }, []);
+
+  const statsData = [
+    { label: "Objetos reportados", value: stats.objetosReportados },
+    { label: "Reclamaciones pendientes", value: stats.reclamacionesPendientes },
+    { label: "Usuarios registrados", value: stats.usuariosRegistrados },
+  ];
 
   return (
     <div className="admin-layout">
@@ -74,7 +74,7 @@ export default function DashboardPage() {
             <div className="stat-card" key={stat.label}>
               <span className="stat-icon">{stat.icon}</span>
               <div>
-                <p className="stat-value">{stat.value}</p>
+                <p className="stat-value">{loading ? "…" : stat.value}</p>
                 <p className="stat-label">{stat.label}</p>
               </div>
             </div>
@@ -88,21 +88,45 @@ export default function DashboardPage() {
           </div>
 
           <div className="cards-grid">
-            {recentObjects.map((obj) => (
-              <div className="object-card" key={obj.id}>
-                <div className="object-img">[ Imagen del Objeto ]</div>
-                <div className="object-info">
-                  <h3 className="object-nombre">{obj.nombre}</h3>
-                  <p className="object-descripcion">{obj.descripcion}</p>
-                  <div className="object-footer">
-                    <span className="object-fecha">📅 {obj.fecha}</span>
-                    <span className={`badge badge-${obj.estado.toLowerCase()}`}>
-                      {obj.estado}
-                    </span>
+            {loading ? (
+              <p className="stat-label">Cargando...</p>
+            ) : recentObjects.length === 0 ? (
+              <p className="stat-label">Aún no hay objetos reportados</p>
+            ) : (
+              recentObjects.map((obj) => (
+                <div className="object-card" key={obj.id}>
+                  <div className="object-img">
+                    {obj.imagen ? (
+                      <img
+                        src={imagenUrl(obj.imagen)}
+                        alt={obj.nombre_objeto}
+                        className="object-img-real"
+                      />
+                    ) : (
+                      "[ Imagen del Objeto ]"
+                    )}
+                  </div>
+                  <div className="object-info">
+                    <h3 className="object-nombre">{obj.nombre_objeto}</h3>
+                    <p className="object-descripcion">
+                      {obj.descripcion || "Sin descripción"}
+                    </p>
+                    <div className="object-footer">
+                      <span className="object-fecha">
+                        📅 {new Date(obj.creado_en).toLocaleDateString("es-MX", {
+                          day: "2-digit",
+                          month: "short",
+                          year: "numeric",
+                        })}
+                      </span>
+                      <span className={`badge badge-${obj.estado.toLowerCase()}`}>
+                        {obj.estado}
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))
+            )}
           </div>
         </div>
       </main>

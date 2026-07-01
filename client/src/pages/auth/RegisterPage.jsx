@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { registerService } from "../../services/auth.service";
 import "./RegisterPage.css";
 
 export default function RegisterPage() {
@@ -10,12 +11,14 @@ export default function RegisterPage() {
     confirmPassword: "",
   });
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
 
@@ -34,7 +37,19 @@ export default function RegisterPage() {
       return;
     }
 
-    console.log("Registro con:", form);
+    try {
+      setLoading(true);
+      const data = await registerService(form.nombre, form.email, form.password);
+
+      localStorage.setItem("token", data.token);
+      localStorage.setItem("usuario", JSON.stringify(data.usuario));
+
+      navigate("/home");
+    } catch (err) {
+      setError(err.message || "Ocurrió un error al registrarte");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -98,17 +113,17 @@ export default function RegisterPage() {
 
           {error && <p className="input-error">{error}</p>}
 
-          <button type="submit" className="register-button">
-            Registrarse
+          <button type="submit" className="register-button" disabled={loading}>
+            {loading ? "Creando cuenta..." : "Registrarse"}
           </button>
         </form>
 
         <p className="login-text">
-  ¿Ya tienes cuenta?{" "}
-  <Link to="/login" className="login-link">
-    Inicia sesión aquí
-  </Link>
-</p>
+          ¿Ya tienes cuenta?{" "}
+          <Link to="/login" className="login-link">
+            Inicia sesión aquí
+          </Link>
+        </p>
       </div>
     </div>
   );
