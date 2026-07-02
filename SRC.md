@@ -5,7 +5,7 @@
 1. **Buscador de Objetos:** Motor con barra inteligente y filtros por zona del campus, categoría y orden cronológico.
 2. **Registrar Objeto Perdido:** Formulario de reporte con selector de ubicación, carga de imágenes y contacto protegido.
 3. **Registrar Objeto Encontrado:** Registro de hallazgos especificando punto de resguardo, estado de custodia y evidencia visual.
-4. **Notificación de un Match:** Algoritmo de cruce automático con alertas al alumno, aviso al administrador y panel de confirmación.
+4. **Notificaciónes:** Aviso al administrador y panel de confirmación.
 5. **Galería de Fotos:** Muro visual en Grid con optimización de imágenes, etiquetas de estado y fotos por defecto.
 6  **Límite de Alertas por Coincidencia: Restricción en el envío de notificaciones masivas estableciendo un tope máximo por búsqueda o día, para evitar la saturación del usuario ante objetos muy comunes (ej. múltiples botellas).
 
@@ -39,7 +39,7 @@
 * **Buscador Inteligente:** Motor de búsqueda con filtros por zona del campus, categoría y orden cronológico.
 * **Registrar Objeto Perdido:** Formulario de reporte rápido para alumnos con carga de imágenes y contacto seguro.
 * **Registrar Objeto Encontrado:** Registro de hallazgos que documente el punto de resguardo físico y la custodia.
-* **Notificación de Match:** Algoritmo automático que cruza datos y envía alertas inmediatas ante una coincidencia.
+* **Notificaciónes:** Notifiaciones de obetos publicados.
 * **Autenticación Institucional & RBAC:** Control de accesos mediante cuentas institucionales con roles divididos en Alumno (0) y Administrador (1).
 
 </td>
