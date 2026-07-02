@@ -209,13 +209,13 @@ export default function ModerationPage() {
                       className="btn-validar"
                       onClick={() => handleAccion(seleccionado.id, "Validado")}
                     >
-                      ✅ Validar reporte
+                      Validar reporte
                     </button>
                     <button
                       className="btn-rechazar"
                       onClick={() => handleAccion(seleccionado.id, "Rechazado")}
                     >
-                      ❌ Rechazar reporte
+                      Rechazar reporte
                     </button>
                   </div>
                 )}
