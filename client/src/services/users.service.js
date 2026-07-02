@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:4000';
+const API_URL = 'https://software-inter.onrender.com';
 
 function authHeaders() {
   const token = localStorage.getItem('token');

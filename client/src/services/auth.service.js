@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:4000';
+const API_URL = 'https://software-inter.onrender.com';
 
 export const loginService = async (email, password) => {
   const response = await fetch(`${API_URL}/auth/login`, {
